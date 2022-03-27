@@ -9,7 +9,9 @@
     "format": "prettier --write **/*.ts",
     "format-check": "prettier --check **/*.ts",
     "test": "jest",
-    "pre-checkin": "npm run format && npm run build && npm test"
+    "pre-checkin": "npm run format && npm run build && npm test",
+    "prepublish": "npm run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -29,7 +31,8 @@
     "@actions/http-client": "^1.0.6",
     "@actions/io": "^1.0.2",
     "@actions/tool-cache": "^1.5.4",
-    "semver": "^6.1.1"
+    "semver": "^6.1.1",
+    "@snyk/protect": "latest"
   },
   "devDependencies": {
     "@types/jest": "^24.0.13",
@@ -41,5 +44,6 @@
     "prettier": "^1.19.1",
     "ts-jest": "^24.3.0",
     "typescript": "^3.8.3"
-  }
+  },
+  "snyk": true
 }
